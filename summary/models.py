@@ -10,3 +10,6 @@ class Person(models.Model):
 class Event(models.Model):
 	person = models.ForeignKey(Person, on_delete = models.CASCADE)
 	event_name = models.CharField(max_length = 200)
+
+	def __str__(self):
+		return self.event_name

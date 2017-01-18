@@ -19,4 +19,9 @@ def index(request):
 	return render(request, 'summary/index.html', context)
 
 def Person_detail(request, Person_id):
-	return HttpResponse("<h2>details for Person ID" + str(Person_id) +"</h2>")
+	#return HttpResponse("<h2>details for Person ID" + str(Person_id) +"</h2>")
+	try:
+		person = Person.objects.get(pk = Person_id)
+	except person.DoesNotExist:
+		raise Http404("Person does not exist")
+	return render(request, 'summary/detail.html', {'Person' : person})

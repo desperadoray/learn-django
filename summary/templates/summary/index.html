@@ -1,0 +1,16 @@
+{% if all_persons %}
+
+
+
+	<ul>
+	
+		{% for person in all_persons %}
+
+		<li><a href = "/music/{{ person.id }}/"> {{ person.name }}</a></li>
+	
+		{% endfor %}
+	</ul>
+
+{%else %}
+	<p>You don't have any Persons recorded</p>
+{% endif%}

@@ -1,1 +1,11 @@
-{{Person}}
+
+<h1>{{Person.name}}</h1>
+
+<h3>{{Person.gender}}</h3>
+
+<ul>
+	{%for event in Person.event_set.all%}
+	<li>{{event.event_name}}</li>
+	{%endfor%}
+</ul>
+

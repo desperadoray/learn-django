@@ -6,7 +6,7 @@
 	
 		{% for person in all_persons %}
 
-		<li><a href = "/summary/{{ person.id }}/"> {{ person.name }}</a></li>
+		<li><a href = "{% url 'detail' person.id%}"> {{ person.name }}</a></li>
 	
 		{% endfor %}
 	</ul>
